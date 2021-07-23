@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'com.babintcev'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 13
+
+// кодировка файлов (если используете русский язык в файлах)
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter', version: '5.7.0'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '4.3.1'
+}
+
+test {
+    useJUnitPlatform()
+}
